@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { sendContactForm } from "../services/emailService";
+import { sendEmail } from "../services/sendMessage.js";
 
 export default function Contact (){
   const formRef = useRef();
@@ -9,14 +9,38 @@ export default function Contact (){
     e.preventDefault();
     setStatus("Mengirim...");
 
-    const success = await sendContactForm(formRef);
-    if (success) {
-      setStatus("Pesan berhasil dikirim ✅");
+    // ambil data dari form
+    const fm = new FormData(formRef.current);
+    const data = Object.fromEntries(fm.entries()); // { name, email, message }
+
+    const result = await sendEmail(data);
+
+    if (result.success) {
+      setStatus("Berhasil terkirim ✅");
       formRef.current.reset();
-    } else {
-      setStatus("Gagal mengirim pesan ❌");
+      return;
     }
-  };
+
+    // Gagal: periksa reason. Kalau rate_limit atau http_error, arahkan ke mailto
+    if (result.reason === "rate_limit" || result.reason === "http_error" || result.reason === "fetch_error") {
+      setStatus("Gagal via StaticForms — membuka email untuk kirim manual...");
+      const subject = encodeURIComponent("Kontak dari website");
+      const body = encodeURIComponent(
+        `Nama: ${data.name || "-"}\nEmail: ${data.email || "-"}\n\nPesan:\n${data.message || "-"}`
+      );
+      // Ganti alamat tujuan berikut dengan email
+      const yourEmail = "hiroba.contact@gmail.com";
+      // tunggu 1 secon biar user sempat baca status, lalu redirect
+      setTimeout(() => {
+        window.location.href = `mailto:${yourEmail}?subject=${subject}&body=${body}`;
+      }, 1000);
+      return;
+    }
+
+    // Lainnya: tampilkan pesan error generik
+    setStatus("Terjadi kesalahan. Silakan coba lagi atau hubungi via Email atau Telegram");
+    console.error("sendEmail result:", result);
+  }; 
 
   return (
   <>
@@ -33,22 +57,22 @@ export default function Contact (){
           <div className="w-full lg:w-2/3 lg:mx-auto">
             <div className="w-full px-4 mb-8">
               <label for="name" className="text-base font-bold text-primary">Nama</label>
-              <input type="text" name="name" id="name" required className="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
+              <input type="text" name="name" placeholder="John Doe" required className="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
             </div>
             <div className="w-full px-4 mb-8">
               <label for="email" className="text-base font-bold text-primary">Email</label>
-              <input type="email" name="email" id="email" required className="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
+              <input type="email" name="email" placeholder="example@gmail.com" required className="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
             </div>
             <div className="w-full px-4 mb-8">
               <label for="message" className="text-base font-bold text-primary">Pesan</label>
-            <textarea type="text" name="message" id="message" required className="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-32" ></textarea>
+            <textarea type="text" name="message" required className="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-32" ></textarea>
             </div>
             <div className="w-full md:w-1/2 mx-auto px-5">
               <button className="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full w-full hover:opacity-80 hover:shadow:lg transition duration-500" type="submit">Kirim</button>
             </div>
           </div>
         </form>
-        {status && <p className="mt-4 text-sm text-center">{status}</p>}
+        <p className="mt-4 text-sm text-center">{status}</p>
       </div>
     </section>
   </>

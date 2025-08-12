@@ -10,6 +10,7 @@ export default function Footer (){
           <div className="w-full px-4 mb-12 text-slate-300 font-medium md:w-1/3">
             <h2 className="font-bold font-4xl text-white mb-5">Hiroba Ikhtiyar</h2>
             <h3 className="font-bold text-2xl mb-2">Hubungi Kami</h3>
+            <p><a href="mailto:hiroba.contact@gmail.com" className="text-primary">hiroba.contact@gmail.com</a></p>
             <p>Telegram: <a href="https://t.me/hirobaa" className="text-primary">@hirobaa</a></p>
             <p>Bandar Lampung</p>
             <p>Indonesia</p>
@@ -19,13 +20,13 @@ export default function Footer (){
             <h3 className="font-semibold text-xl text-white mb-5">Kategori Tulisan</h3>
             <ul className="text-slate-300">
               <li>
-                <a href="#" className="inline-block text-base hover:text-primary mb-3">Programming</a>
+                <a href="#blog" className="inline-block text-base hover:text-primary mb-3">Programming</a>
               </li>
               <li>
-                <a href="#" className="inline-block text-base hover:text-primary mb-3">Teknologi</a>
+                <a href="#blog" className="inline-block text-base hover:text-primary mb-3">Machine Learning</a>
               </li>
                <li>
-                <a href="#" className="inline-block text-base hover:text-primary mb-3">Gaya Hidup</a>
+                <a href="#blog" className="inline-block text-base hover:text-primary mb-3">Experience</a>
               </li>
             </ul>
           </div>
