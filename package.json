@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://hikz.github.io/portfolio/",
+  "homepage": "https://hikz.github.io/hiroba-verse/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
