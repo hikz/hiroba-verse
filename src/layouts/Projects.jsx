@@ -74,7 +74,7 @@ export default function Projects (){
                     <p className="text-gray-600 mt-4">{repo.description ? repo.description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget nunc vitae nisi faucibus molestie non ullamcorper eros. Vivamus sed nunc sed est sagittis finibus."}</p>
                     <div className="flex flex-wrap">
                         <p className="w-1/2 pt-1">{formatDate(repo.created_at)}</p>
-                        <a href={repo.homepage} className="font-medium text-sm text-center text-white bg-black py-2 px-4 rounded-lg hover:opacity-80">Playground</a>
+                        <a href={repo.homepage} className="font-medium text-sm text-center text-white bg-black py-2 px-4 rounded-lg hover:opacity-80">Try It Now</a>
                     </div>
                   
                 </div>
