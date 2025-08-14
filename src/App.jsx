@@ -1,3 +1,5 @@
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Hero from './layouts/Hero';
 import Navbar from './layouts/Navbar';
 import About from './layouts/About';
@@ -8,14 +10,23 @@ import Contact from './layouts/Contact';
 
 export default function App() {
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Blogs />
-      <Contact />
-      <Footer />
-    </>
+    <Routes>
+      <Route
+        path="/"
+          element={
+            <>
+              <Navbar />
+              <Hero />
+              <About />
+              <Projects />
+              <Blogs />
+              <Contact />
+              <Footer />
+            </>
+          }
+      />
+    </Routes>
   );
 }
+
+
