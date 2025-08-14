@@ -20,7 +20,7 @@ export async function getUserAndRepos(){
     languages.push(data);
   })
   
-  console.log(languages[0]);
+  // console.log(languages[0]);
   return [profile, repos, languages];
   
 }

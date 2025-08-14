@@ -33,7 +33,7 @@ export default function Blogs (){
           {/* Card */}
 
           {medium ? medium.items.map(item => ( 
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 min-w-[280px] max-w-xs flex-shrink-0">
+            <div key={item.link} className="bg-white rounded-2xl shadow-lg border border-gray-200 min-w-[280px] max-w-xs flex-shrink-0">
             <div className="px-6 pt-4 pb-2 flex">
               <div className="text-sm text-gray-700">{readingTime(item.content)} min read</div>
               

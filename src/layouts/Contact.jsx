@@ -56,15 +56,15 @@ export default function Contact (){
         <form ref={formRef} onSubmit={handleSubmit} >
           <div className="w-full lg:w-2/3 lg:mx-auto">
             <div className="w-full px-4 mb-8">
-              <label for="name" className="text-base font-bold text-primary">Nama</label>
+              <label htmlFor="name" className="text-base font-bold text-primary">Nama</label>
               <input type="text" name="name" placeholder="John Doe" required className="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
             </div>
             <div className="w-full px-4 mb-8">
-              <label for="email" className="text-base font-bold text-primary">Email</label>
+              <label htmlFor="email" className="text-base font-bold text-primary">Email</label>
               <input type="email" name="email" placeholder="example@gmail.com" required className="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
             </div>
             <div className="w-full px-4 mb-8">
-              <label for="message" className="text-base font-bold text-primary">Pesan</label>
+              <label htmlFor="message" className="text-base font-bold text-primary">Pesan</label>
             <textarea type="text" name="message" required className="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-32" ></textarea>
             </div>
             <div className="w-full md:w-1/2 mx-auto px-5">
