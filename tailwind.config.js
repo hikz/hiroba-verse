@@ -12,7 +12,7 @@ module.exports = {
       },
       fontFamily: {
         raleway: ['Raleway', 'sans-serif'],
-      },
+      }
     },
   },
   plugins: [],

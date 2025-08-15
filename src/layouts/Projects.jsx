@@ -27,7 +27,7 @@ export default function Projects (){
                 
                 <div className="w-1/2  ">
                     
-                    <a href="http://github.com/hikz" target="_blank" className="w-full block rounded-full"><img src={github ? github[0].avatar_url : "../../public/assets/favicon.ico"} alt="my github profil" className="rounded-full w-[120px] h-[120px] md:text-center mx-auto" /></a>
+                    <a href="http://github.com/hikz" target="_blank" className="w-full block rounded-full"><img src={github ? github[0].avatar_url : import.meta.env.BASE_URL + "/assets/favicon.ico"} alt="my github profil" className="rounded-full w-[120px] h-[120px] md:text-center mx-auto" /></a>
                     
                 </div>
                 
@@ -48,7 +48,7 @@ export default function Projects (){
                 <div className="min-w-[300px] max-w-[350px] ml-4 rounded-lg bg-white flex flex-wrap p-6 rounded-lg w-max shadow-lg transform transition-all hover:scale-105  hidden sm:flex sm:flex-wrap">
                     <div className="w-1/2  ">
                         
-                        <a href="http://github.com/hikz" target="_blank" className="w-full block rounded-full"><img src={github ? github[0].avatar_url : "../../public/assets/favicon.ico"} alt="my github profil" className="rounded-full mx-auto" /></a>
+                        <a href="http://github.com/hikz" target="_blank" className="w-full block rounded-full"><img src={github ? github[0].avatar_url : import.meta.env.BASE_URL + "/assets/favicon.ico"} alt="my github profil" className="rounded-full mx-auto" /></a>
                         
                   </div>
                     

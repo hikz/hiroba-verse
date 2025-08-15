@@ -1,6 +1,7 @@
 export default function Hero() {
   return (
-  <section id="home" className="pt-32 bg-[url('public/assets/hiroba.png')] bg-cover h-[600px] bg-no-repeat bg-center md:bg-bottom">
+  <section id="home" className="pt-32 bg-hiroba bg-cover h-[600px] bg-no-repeat bg-center md:bg-bottom"
+    style={{ backgroundImage: `url('${import.meta.env.BASE_URL}public/assets/hiroba.png')`}}>
     
     <div className="container mx-auto">
       <div className="w-full flex items-center ">
