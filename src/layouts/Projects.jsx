@@ -32,8 +32,8 @@ export default function Projects (){
                 </div>
                 
                 <div className="w-1/2 mt-5 md:w-full">
-                    <p className="text-2xl font-semibold text-gray-800 -mb-2 ">{github ? github[0].name : "Loading..."}</p>
-                    <p className="text-sl text-slate-700">{github ? github[0].login : "Loadung..."} • him/he</p>
+                    <p className="text-2xl font-semibold text-gray-800 -mb-2 ">{github ? github[0].name : "hikz"}</p>
+                    <p className="text-sl text-slate-700">{github ? github[0].login : "Hiroba"} • him/he</p>
                     <p className="text-md font-bold">🗃️ repos : {github ? github[0].public_repos : "Loading..."}</p>
                 </div>
                 <div className="w-full text-center">
@@ -53,12 +53,12 @@ export default function Projects (){
                   </div>
                     
                     <div className="w-1/2 mt-4 pl-4 ">
-                        <p className="text-2xl font-semibold text-gray-800 -mb-2 ">{github ? github[0].name : "Loading..."}</p>
-                        <p className="text-sl text-slate-700">{github ? github[0].login : "Loading..."} • him/he</p>
+                        <p className="text-2xl font-semibold text-gray-800 -mb-2 ">{github ? github[0].name : "hikz"}</p>
+                        <p className="text-sl text-slate-700">{github ? github[0].login : "Hiroba"} • him/he</p>
                         <p className="text-md font-bold">🗃️ repos : {github ? github[0].public_repos : "Loading..."}</p>
                     </div>
                     <div className="w-full text-center">
-                        <p>{github ? github[0].bio : "Loading..."}</p>
+                        <p>{github ? github[0].bio : "Menjadi lebih baik lagi"}</p>
                     </div>
                 </div>
                 
