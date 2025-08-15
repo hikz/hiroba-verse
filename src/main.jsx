@@ -1,13 +1,17 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { HashRouter as Router } from 'react-router-dom';
+import React from 'react';
 import './index.css';
 import App from './App';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <BrowserRouter basename="/hiroba-verse">
+      <Routes>
+        <Route path="*" element={<App />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
+  
 );
+
