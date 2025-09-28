@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getMediumFeed } from '../services/mediumService.js';
+import { getMediumFeed } from '../services/blogService.js';
 import { formatDate } from '../utils/formatDate.js';
 import { sliceString, readingTime } from '../utils/stringUtils.js';
 import Icons from '../components/Icons';
@@ -30,7 +30,7 @@ export default function Blogs (){
        {/* Scroll container */}
         <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide mx-4">
           
-          {/* Card */}
+          {/* Card medium */}
 
           {medium ? medium.items.map(item => ( 
             <div key={item.link} className="bg-white rounded-2xl shadow-lg border border-gray-200 min-w-[280px] max-w-xs flex-shrink-0">
@@ -71,7 +71,51 @@ export default function Blogs (){
           </div>
 
           )) : "loading..."}
+         
           
+          {/* Card blogspot
+          <div className="min-w-[280px] max-w-xs bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
+
+            <div className="bg-slate-800 flex items-center justify-center h-40">
+              <img src="hiroba.png" alt="" />
+            </div>
+
+            <div className="p-4">
+              <h2 className="text-xl font-bold text-gray-900">
+                Simple Linear Regression Algoritma ML
+              </h2>
+              <p className="text-gray-600 text-sm mt-1">
+                Penggunaan algoritma regresi linear dalam machine learning m...
+              </p>
+
+              <div className="flex items-center justify-between mt-3 text-sm text-gray-500">
+                <div className="flex items-center gap-2">
+                  <span className="bg-orange-500 text-white rounded-md p-1">
+                    <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
+                      <path d="M19 0H5C2.8 0 1 1.8 1 4v16c0 2.2 1.8 4 4 4h14c2.2 0 4-1.8 4-4V4c0-2.2-1.8-4-4-4zm-4 18H8c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h7c.6 0 1 .4 1 1v10c0 .6-.4 1-1 1z" />
+                    </svg>
+                  </span>
+                  <span>Hiroba</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M8 7V3m8 4V3m-9 8h10m-12 0a9 9 0 1018 0 9 9 0 00-18 0z"
+                    />
+                  </svg>
+                  <span>19 Jun 2025</span>
+                </div>
+              </div>
+
+              <button className="w-full mt-4 bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-lg font-medium">
+                Read on Blogger
+              </button>
+            </div>
+          </div>
+          */}
         </div>
       </div>
       </section> 
